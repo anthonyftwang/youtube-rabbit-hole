@@ -1,5 +1,3 @@
-chrome.storage.sync.set({hideTrending: true, hideSubs: true}); // for testing
-
 chrome.storage.sync.get(["hideTrending", "hideSubs"], function(result) {
     var hideTrending = result.hideTrending;
     var hideSubs = result.hideSubs;

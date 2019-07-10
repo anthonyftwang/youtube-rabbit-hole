@@ -1,6 +1,14 @@
 chrome.runtime.onInstalled.addListener(function() {
 
-  chrome.storage.sync.set({hideEndWall: true}); // for testing
+  chrome.storage.sync.set({
+    hideHomePage: true,
+    hideTrending: true,
+    hideSubs: true,
+    hideSideBar: true,
+    hideComments: true,
+    hideEndWall: true,
+    hideNav: true
+  });
 
   chrome.storage.sync.get("hideEndWall", function(result) {
       var hideEndWall = result.hideEndWall;

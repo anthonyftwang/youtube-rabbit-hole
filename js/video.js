@@ -1,5 +1,3 @@
-chrome.storage.sync.set({hideSideBar: true, hideComments: true}); // for testing
-
 chrome.storage.sync.get(["hideSideBar", "hideComments"], function(result) {
     var hideSideBar = result.hideSideBar;
     var hideComments = result.hideComments;

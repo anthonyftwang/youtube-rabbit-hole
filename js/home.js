@@ -1,5 +1,3 @@
-chrome.storage.sync.set({hideHomePage: true}); // for testing
-
 chrome.storage.sync.get("hideHomePage", function(result) {
     var hideHomePage = result.hideHomePage;
     randQuote = chooseQuote();
@@ -59,7 +57,7 @@ function renderQuote(quote) {
     span.style.marginLeft = "auto";
     span.style.marginRight = "auto";
     span.style.marginTop = "25px";
-    span.style.color = "#0d0d0d";
+    span.style.color = "#282828";
     span.style.fontFamily = "Roboto, Arial, sans-serif";
     span.style.fontSize = "1.4rem";
     span.style.fontWeight = "400";
