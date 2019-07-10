@@ -6,23 +6,18 @@ chrome.runtime.onInstalled.addListener(function() {
     hideSubs: true,
     hideSideBar: true,
     hideComments: true,
-    hideEndWall: true,
     hideNav: true
   });
 
-  chrome.storage.sync.get("hideEndWall", function(result) {
-      var hideEndWall = result.hideEndWall;
-      if (hideEndWall == true) {
-        chrome.webRequest.onBeforeRequest.addListener(
-          function() { return {cancel: true}; },
-          {
-            urls: ["*://www.youtube.com/yts/jsbin/*/endscreen.js"],
-            types: ["script"]
-          },
-          ["blocking"]
-        );
-      }
-  });
+  // TODO - implement user prefs for end wall (remove listener???)
+  chrome.webRequest.onBeforeRequest.addListener(
+    function() { return {cancel: true}; },
+    {
+      urls: ["*://www.youtube.com/yts/jsbin/*/endscreen.js"],
+      types: ["script"]
+    },
+    ["blocking"]
+  );
 
   chrome.runtime.onMessage.addListener(function(request, sender) {
     chrome.tabs.update(sender.tab.id, {url: request.redirect});

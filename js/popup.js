@@ -36,13 +36,6 @@ function restorePrefs() {
             chrome.storage.sync.set({hideComments: this.checked})
         });
     });
-    chrome.storage.sync.get("hideEndWall", function(result) {
-        var prefEndWall = document.getElementById("hideendwall");
-        prefEndWall.checked = result.hideEndWall;
-        prefEndWall.addEventListener("change", function() {
-            chrome.storage.sync.set({hideEndWall: this.checked})
-        });
-    });
     chrome.storage.sync.get("hideNav", function(result) {
         var prefNav = document.getElementById("hidenav");
         prefNav.checked = result.hideNav;
