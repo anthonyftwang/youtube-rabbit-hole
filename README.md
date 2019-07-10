@@ -3,7 +3,7 @@ Chrome extension to remove YouTube recommendations, comments, and more so you do
 
 ## Usage
 
-You can choose\* to do the following to reduce distractions while browsing YouTube:
+You can choose to do the following to reduce distractions while browsing YouTube:
 
 - Replace suggested content with cute bunnies!
 - Hide comments (including livestream chats)
@@ -14,7 +14,7 @@ You can choose\* to do the following to reduce distractions while browsing YouTu
 The extension also hides banner-style ads to maintain a clean and distraction free environment.
 
 ## Roadmap
-- [ ] \*Implement user preferences using chrome.storage.sync API (currently basic framework in place for testing)
+- [X] Implement user preferences using chrome.storage.sync API (currently basic framework in place for testing)
 - [ ] Deployment to Chrome Web Store
 - [ ] Performance tweaks/enhancements
 
