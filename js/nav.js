@@ -1,9 +1,9 @@
-chrome.storage.sync.set({hideNav: true}); // for testing
-
 chrome.storage.sync.get("hideNav", function(result) {
     var hideNav = result.hideNav;
     if (hideNav == true) {
-        hideNavDrawer();
+        window.setInterval(function() {
+            hideNavDrawer();
+        }, 100);
     }
 });
 
