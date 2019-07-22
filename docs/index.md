@@ -1,9 +1,9 @@
-# youtube-rabbit-hole
+# YouTube Rabbit Hole
 Chrome extension to remove YouTube recommendations, comments, and more so you don't go down the rabbit hole again!
 
-## Usage
+## Features
 
-To install, head over to the [listing on the Chrome Web Store](https://chrome.google.com/webstore/detail/youtube-rabbit-hole/nlddakjbmpidooplakalfoogdincflfh/) and click "Add to Chrome". Once added, the extension lets you reduce distractions while browsing YouTube in the following ways:
+There is magic, but you have to be the magician. This extension allows you to take control of your time and reduce distractions while browsing YouTube in the following ways:
 
 - Replace suggested content with cute bunnies!
 - Hide comments (including livestream chats)
@@ -12,13 +12,7 @@ To install, head over to the [listing on the Chrome Web Store](https://chrome.go
 - Disabling the wall of suggestions following a video
 - Hiding banner-style ads to maintain a clean and distraction free environment
 
-Click the browser action in the toolbar to view and edit preferences.
-
-## Roadmap
-- [X] Implement user preferences using chrome.storage.sync API (currently basic framework in place for testing)
-- [X] Deployment to Chrome Web Store
-- [ ] Performance tweaks/enhancements
-- [ ] Internationalization
+To install, head over to the [listing on the Chrome Web Store](https://chrome.google.com/webstore/detail/youtube-rabbit-hole/nlddakjbmpidooplakalfoogdincflfh/) and click "Add to Chrome". You can then click the browser action in the toolbar to view and edit preferences!
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This open source project is licensed under the MIT License. View the source code [here](https://github.com/anthonyftwang/youtube-rabbit-hole)!
