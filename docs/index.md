@@ -18,15 +18,12 @@ You can click the browser action in the toolbar to view and edit preferences.
 ## Screenshots
 
 ![homepage](webstore1.png)
-
 *YouTube Homepage*
 
 ![video](webstore2.png)
-
 *Video Page*
 
 ![preferences](webstore3.png)
-
 *Customizable Preferences*
 
 ## Install
