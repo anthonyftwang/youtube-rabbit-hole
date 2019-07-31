@@ -50,7 +50,7 @@ function chooseQuote() {
 }
 
 function renderMagic() {
-  var magic = document.createElement("img");
+  const magic = document.createElement("img");
   magic.src = chrome.runtime.getURL("images/magicbunny.png");
   magic.width = 325;
   magic.height = 414;
@@ -58,11 +58,12 @@ function renderMagic() {
   magic.style.marginLeft = "auto";
   magic.style.marginRight = "auto";
   magic.style.marginTop = "25px";
+
   return magic;
 }
 
 function renderQuote(quote) {
-  var span = document.createElement("span");
+  const span = document.createElement("span");
   span.style.display = "block";
   span.style.marginLeft = "auto";
   span.style.marginRight = "auto";
@@ -73,5 +74,6 @@ function renderQuote(quote) {
   span.style.fontWeight = "400";
   span.style.lineHeight = "2.1rem";
   span.appendChild(document.createTextNode(quote));
+
   return span;
 }
