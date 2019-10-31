@@ -17,7 +17,7 @@ chrome.storage.sync.get("hideHomePage", function(result) {
                 var magicBunny = renderMagic();
             }
             catch {
-                safe = false
+                safe = false;
             }
     
             var recs = document.querySelector("ytd-section-list-renderer");
