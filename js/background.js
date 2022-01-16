@@ -1,63 +1,67 @@
-chrome.runtime.onInstalled.addListener(function() {
-
+chrome.runtime.onInstalled.addListener(function () {
   chrome.storage.sync.set({
     hideHomePage: true,
     hideTrending: true,
     hideSubs: true,
     hideSideBar: true,
     hideComments: true,
-    hideNav: true
+    hideNav: true,
   });
 
-  // TODO - implement user prefs for end wall (remove listener???)
-  chrome.webRequest.onBeforeRequest.addListener(
-    function() { return {cancel: true}; },
-    {
-      urls: ["*://www.youtube.com/yts/jsbin/*/endscreen.js"],
-      types: ["script"]
-    },
-    ["blocking"]
-  );
-
-  chrome.runtime.onMessage.addListener(function(request, sender) {
-    chrome.tabs.update(sender.tab.id, {url: request.redirect});
+  chrome.runtime.onMessage.addListener(function (request, sender) {
+    chrome.tabs.update(sender.tab.id, { url: request.redirect });
   });
 
-  chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
-    chrome.declarativeContent.onPageChanged.addRules([videoRule, homeRule, othersRule]);
+  chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
+    chrome.declarativeContent.onPageChanged.addRules([
+      videoRule,
+      homeRule,
+      othersRule,
+    ]);
   });
 
   var videoRule = {
     conditions: [
       new chrome.declarativeContent.PageStateMatcher({
-        pageUrl: {urlContains: "youtube.com/watch?"},
-      })
+        pageUrl: { urlContains: "youtube.com/watch?" },
+      }),
     ],
-    actions: [new chrome.declarativeContent.RequestContentScript({js: ["js/video.js"]})]
+    actions: [
+      new chrome.declarativeContent.RequestContentScript({
+        js: ["js/video.js"],
+      }),
+    ],
   };
 
   var homeRule = {
     conditions: [
       new chrome.declarativeContent.PageStateMatcher({
-        pageUrl: {hostEquals: "www.youtube.com", pathPrefix: "/?gl="},
+        pageUrl: { hostEquals: "www.youtube.com", pathPrefix: "/?gl=" },
       }),
       new chrome.declarativeContent.PageStateMatcher({
-        pageUrl: {hostEquals: "www.youtube.com", pathEquals: "/"},
-      })
+        pageUrl: { hostEquals: "www.youtube.com", pathEquals: "/" },
+      }),
     ],
-    actions: [new chrome.declarativeContent.RequestContentScript({js: ["js/home.js"]})]
+    actions: [
+      new chrome.declarativeContent.RequestContentScript({
+        js: ["js/home.js"],
+      }),
+    ],
   };
 
   var othersRule = {
     conditions: [
       new chrome.declarativeContent.PageStateMatcher({
-        pageUrl: {urlContains: "youtube.com/feed/trending"},
+        pageUrl: { urlContains: "youtube.com/feed/trending" },
       }),
       new chrome.declarativeContent.PageStateMatcher({
-        pageUrl: {urlContains: "youtube.com/feed/subscriptions"},
-      })
+        pageUrl: { urlContains: "youtube.com/feed/subscriptions" },
+      }),
     ],
-    actions: [new chrome.declarativeContent.RequestContentScript({js: ["js/others.js"]})]
+    actions: [
+      new chrome.declarativeContent.RequestContentScript({
+        js: ["js/others.js"],
+      }),
+    ],
   };
-
 });
