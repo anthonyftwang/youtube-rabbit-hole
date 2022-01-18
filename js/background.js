@@ -6,6 +6,7 @@ chrome.runtime.onInstalled.addListener(function () {
     hideSideBar: true,
     hideComments: true,
     hideNav: true,
+    hideEndWall: true,
   });
 
   chrome.runtime.onMessage.addListener(function (request, sender) {
