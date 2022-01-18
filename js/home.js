@@ -20,17 +20,11 @@ chrome.storage.sync.get("hideHomePage", function (result) {
         safe = false;
       }
 
-      var recs = document.querySelector("ytd-section-list-renderer");
+      var recs = document.querySelector("ytd-browse");
       if (recs && safe) {
         recs.innerHTML = "";
         recs.appendChild(magicBunny);
         recs.appendChild(renderQuote(randQuote));
-      }
-      var recs2 = document.querySelector("ytd-rich-grid-renderer");
-      if (recs2 && safe) {
-        recs2.innerHTML = "";
-        recs2.appendChild(magicBunny);
-        recs2.appendChild(renderQuote(randQuote));
       }
     }
   }, 100);
