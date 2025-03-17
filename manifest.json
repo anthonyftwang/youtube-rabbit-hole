@@ -2,16 +2,17 @@
     "name": "Rabbit Hole for YouTube™",
     "version": "1.2",
     "description": "Remove YouTube™ recommendations, comments, and more so you don't go down the rabbit hole again!",
+    "host_permissions": [
+        "https://www.youtube.com/*"
+    ],
     "permissions": [
-      "*://www.youtube.com/*",
       "declarativeContent",
       "storage"
     ],
     "background": {
-        "scripts": ["js/background.js"],
-        "persistent": true
+        "service_worker": "js/background.js"
     },
-    "browser_action": {
+    "action": {
         "default_popup": "popup.html",
         "default_title": "Rabbit Hole for YouTube™",
         "default_icon": {
@@ -35,7 +36,11 @@
           "run_at": "document_end"
         }
     ],
-    "web_accessible_resources": ["images/rabbithole.png", "images/magicbunny.png"],
+    "web_accessible_resources": [
+        {
+    "resources": ["images/rabbithole.png", "images/magicbunny.png"],
+    "matches": ["<all_urls>"]
+    }],
     "incognito": "not_allowed",
-    "manifest_version": 2
+    "manifest_version": 3
 }
