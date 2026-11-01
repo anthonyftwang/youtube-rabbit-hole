@@ -5,6 +5,9 @@ chrome.storage.sync.get(
     var hideComments = result.hideComments;
     var hideEndWall = result.hideEndWall;
     window.setInterval(function () {
+      if (window.location.pathname !== "/watch") {
+        return;
+      }
       var sideAd = document.querySelector(
         "ytd-player-legacy-desktop-watch-ads-renderer"
       );

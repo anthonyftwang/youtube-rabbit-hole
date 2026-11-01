@@ -2,6 +2,9 @@ chrome.storage.sync.get("hideHomePage", function (result) {
   var hideHomePage = result.hideHomePage;
   randQuote = chooseQuote();
   window.setInterval(function () {
+    if (window.location.pathname !== "/") {
+      return;
+    }
     var frontAd = document.querySelector("ytd-banner-promo-renderer");
     if (frontAd) {
       frontAd.innerHTML = "";
