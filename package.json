@@ -1,0 +1,11 @@
+{
+  "name": "youtube-rabbit-hole",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/manifest-v3.test.cjs",
+    "test:browser": "node --test tests/browser.test.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}

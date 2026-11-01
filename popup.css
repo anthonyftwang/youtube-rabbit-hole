@@ -52,7 +52,16 @@ hr {
   -ms-user-select: none;
 }
 .onoffswitch-checkbox {
-  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip-path: inset(50%);
+  overflow: hidden;
+}
+.onoffswitch-checkbox:focus-visible + .onoffswitch-label {
+  outline: 2px solid #282828;
+  outline-offset: 4px;
 }
 .onoffswitch-label {
   display: block;

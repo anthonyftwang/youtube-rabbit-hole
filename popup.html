@@ -2,6 +2,7 @@
 <html>
   <head>
       <link rel="stylesheet" href="popup.css">
+      <script src="js/preferences.js"></script>
       <script src="js/popup.js"></script>
   </head>
   <body>
@@ -13,7 +14,7 @@
     <hr>
 
     <div class="onoffswitch">
-      <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="hidehomepage">
+      <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="hidehomepage" data-preference="hideHomePage" aria-label="Hide homepage" disabled>
       <label class="onoffswitch-label" for="hidehomepage"></label>
     </div>
     <p class="setting">Hide homepage</p>
@@ -21,7 +22,7 @@
     <hr>
 
     <div class="onoffswitch">
-      <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="hidesidebar">
+      <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="hidesidebar" data-preference="hideSideBar" aria-label="Hide sidebar" disabled>
       <label class="onoffswitch-label" for="hidesidebar"></label>
     </div>
     <p class="setting">Hide sidebar</p>
@@ -29,7 +30,7 @@
     <hr>
 
     <div class="onoffswitch">
-      <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="hidecomments">
+      <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="hidecomments" data-preference="hideComments" aria-label="Hide comments" disabled>
       <label class="onoffswitch-label" for="hidecomments"></label>
     </div>
     <p class="setting">Hide comments</p>
@@ -37,7 +38,7 @@
     <hr>
 
     <div class="onoffswitch">
-      <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="hideendwall">
+      <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="hideendwall" data-preference="hideEndWall" aria-label="Hide end wall" disabled>
       <label class="onoffswitch-label" for="hideendwall"></label>
     </div>
     <p class="setting">Hide end wall</p>
@@ -45,7 +46,7 @@
     <hr>
 
     <div class="onoffswitch">
-      <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="hidenav">
+      <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="hidenav" data-preference="hideNav" aria-label="Simple nav drawer" disabled>
       <label class="onoffswitch-label" for="hidenav"></label>
     </div>
     <p class="setting">Simple nav drawer</p>
@@ -53,7 +54,7 @@
     <hr>
 
     <div class="onoffswitch">
-      <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="hidetrending">
+      <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="hidetrending" data-preference="hideTrending" aria-label="Disable trending" disabled>
       <label class="onoffswitch-label" for="hidetrending"></label>
     </div>
     <p class="setting">Disable trending</p>
@@ -61,14 +62,14 @@
     <hr>
 
     <div class="onoffswitch">
-      <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="hidesubs">
+      <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="hidesubs" data-preference="hideSubs" aria-label="Disable subscriptions" disabled>
       <label class="onoffswitch-label" for="hidesubs"></label>
     </div>
     <p class="setting">Disable subscriptions</p>
 
     <hr>
 
-    <small class="hint">Reload the page for changes to take effect.</small>
+    <small class="hint">Changes apply to open YouTube tabs immediately.</small>
 
   </body>
 </html>
