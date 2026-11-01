@@ -25,7 +25,11 @@ You can click the browser action in the toolbar to view and edit preferences.
 
 ## Install
 
-To install, head over to the [listing on the Chrome Web Store](https://chrome.google.com/webstore/detail/youtube-rabbit-hole/nlddakjbmpidooplakalfoogdincflfh/) and click "Add to Chrome". That's it!
+The old store release uses Manifest V2 and no longer runs in current Chrome.
+A Manifest V3 update must be published by the maintainer. In the meantime,
+[download the updated source and follow the manual loading instructions](https://github.com/anthonyftwang/youtube-rabbit-hole#development).
+The [Chrome Web Store listing](https://chrome.google.com/webstore/detail/youtube-rabbit-hole/nlddakjbmpidooplakalfoogdincflfh/)
+will provide the normal installation path once the updated version is published.
 
 ## License
 This open source project is licensed under the MIT License. View the source code [here](https://github.com/anthonyftwang/youtube-rabbit-hole)!

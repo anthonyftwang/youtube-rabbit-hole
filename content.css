@@ -1,0 +1,50 @@
+/* Hide content rather than destroying YouTube's state. Toggling a setting restores it. */
+html[data-rh-page="home"].rh-hideHomePage ytd-browse[page-subtype="home"] > *,
+html[data-rh-page="watch"].rh-hideSideBar :is(ytd-watch-flexy #related, ytd-watch-next-secondary-results-renderer) > *,
+html[data-rh-page="watch"].rh-hideComments :is(ytd-comments, ytd-live-chat-frame > *),
+html[data-rh-page="watch"].rh-hideEndWall .ytp-endscreen-content,
+html[data-rh-page="home"] :is(ytd-banner-promo-renderer, ytd-video-masthead-ad-v3-renderer, ytd-ad-slot-renderer),
+html[data-rh-page="watch"] :is(ytd-player-legacy-desktop-watch-ads-renderer, ytd-ad-slot-renderer) {
+  display: none !important;
+}
+
+html[data-rh-page="home"].rh-hideHomePage ytd-browse[page-subtype="home"]::before,
+html[data-rh-page="watch"].rh-hideSideBar:not(:has(ytd-live-chat-frame:not([hidden]))) :is(ytd-watch-flexy #related, ytd-watch-next-secondary-results-renderer)::before,
+html[data-rh-page="watch"].rh-hideComments ytd-live-chat-frame::before {
+  content: "";
+  display: block;
+  width: min(325px, 100%);
+  height: 310px;
+  margin: 50px auto;
+  background: var(--rh-rabbit) center / contain no-repeat;
+}
+
+html[data-rh-page="home"].rh-hideHomePage ytd-browse[page-subtype="home"]::before {
+  height: 414px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  background-image: var(--rh-magic);
+}
+
+html[data-rh-page="home"].rh-hideHomePage ytd-browse[page-subtype="home"]::after {
+  content: var(--rh-quote);
+  display: block;
+  margin: 25px auto;
+  max-width: 650px;
+  padding: 0 16px;
+  color: var(--yt-spec-text-primary, #282828);
+  text-align: center;
+  font: 400 1.4rem / 2.1rem Roboto, Arial, sans-serif;
+}
+
+/* Match destinations, never menu positions or translated labels. */
+html.rh-hideNav ytd-mini-guide-renderer,
+html.rh-hideNav ytd-guide-entry-renderer:has(a:is(
+  [href^="/feed/trending"], [href^="/feed/subscriptions"],
+  [href^="/feed/storefront"], [href^="/paid_memberships"],
+  [href^="/playlist?list=WL"], [href^="/playlist?list=LL"],
+  [href^="https://www.youtube.com/feed/trending"],
+  [href^="https://www.youtube.com/feed/subscriptions"]
+)) {
+  display: none !important;
+}

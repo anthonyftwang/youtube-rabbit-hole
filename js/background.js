@@ -1,15 +1,9 @@
+importScripts("preferences.js");
+
 chrome.runtime.onInstalled.addListener(function (details) {
-  if (details.reason !== "install") {
-    return;
-  }
-  chrome.storage.sync.set({
-    hideHomePage: true,
-    hideTrending: true,
-    hideSubs: true,
-    hideSideBar: true,
-    hideComments: true,
-    hideNav: true,
-    hideEndWall: true,
+  if (details.reason !== "install") return;
+  chrome.storage.sync.get(DEFAULT_PREFS, function (preferences) {
+    chrome.storage.sync.set(preferences);
   });
 });
 
